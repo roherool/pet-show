@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import express from "express";
+import express, { Request, Response } from "express";
 import mustache from "mustache-express";
 import path from "path";
 
@@ -17,8 +17,8 @@ server.use(express.static(path.join(__dirname, "../public")));
 
 server.use(routes);
 
-server.use((req, res) => {
-  res.send("Página não encontrada!");
+server.use((req: Request, res: Response) => {
+  res.render("pages/404");
 })
 
 server.listen(process.env.PORT, () => console.log("Server running in", process.env.PORT));
