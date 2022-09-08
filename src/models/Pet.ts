@@ -1,6 +1,4 @@
-type PetType = {
-  type: "dog" | "cat" | "fish";
-};
+type PetType = "dog" | "cat" | "fish";
 
 type Pet = {
   type: PetType;
